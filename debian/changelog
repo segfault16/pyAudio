@@ -1,3 +1,10 @@
+python-pyaudio (0.2.10-1) unstable; urgency=low
+
+  * Fix deadlock on some platforms with improved handling of
+    Python GIL.
+
+ -- Hubert Pham <hubert@mit.edu>  Wed, 11 Jan 2017 23:00:00 -0500
+
 python-pyaudio (0.2.9-1) unstable; urgency=low
 
   * Fix overflow error handling logic for pa_read_stream.
