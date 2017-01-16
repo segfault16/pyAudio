@@ -4,25 +4,15 @@
 SPACE := 
 SPACE +=
 
-PYVERS := $(shell pyversions -vs) $(shell py3versions -vs)
-
 PYTHONPATH=$(subst $(SPACE),:,$(abspath $(wildcard build/lib*)))
 
 %:
-	dh $@ --with python2,python3,linktree
+	dh $@ --with python2,python3,linktree --buildsystem=pybuild
 
-override_dh_auto_build: $(PYVERS:%=build-python%)
+override_dh_auto_build:
+	dh_auto_build
 	PYTHONPATH=$(PYTHONPATH) make docs
 
-# This has to be in a separate target otherwise
-# make gets confused and executes the PYTHONPATH too early
-build-python%:
-	dh_testdir
-	python$* setup.py build
-
-
-override_dh_auto_install: $(PYVERS:%=install-python%)
-
-install-python%:
-	python$* setup.py install --install-layout=deb --root=$(CURDIR)/debian/tmp
-
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf docs
