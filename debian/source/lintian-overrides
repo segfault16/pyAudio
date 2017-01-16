@@ -1,0 +1,4 @@
+# Overrides for false positive errors pertaining to missing jQuery and
+# underscore JS libraries.
+python-pyaudio source: source-is-missing docs/_static/jquery.js line length is 32014 characters (>512)
+python-pyaudio source: source-is-missing docs/_static/underscore.js line length is 519 characters (>512)
