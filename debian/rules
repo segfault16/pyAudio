@@ -6,6 +6,8 @@ SPACE +=
 
 PYTHONPATH=$(subst $(SPACE),:,$(abspath $(wildcard build/lib*)))
 
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
 %:
 	dh $@ --with python2,python3,linktree --buildsystem=pybuild
 
