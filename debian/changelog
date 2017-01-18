@@ -1,9 +1,19 @@
-python-pyaudio (0.2.10-1) unstable; urgency=low
+python-pyaudio (0.2.10-1) unstable; urgency=medium
 
-  * Fix deadlock on some platforms with improved handling of
-    Python GIL.
+  [ Hubert Pham ]
+  * New upstream release
+    - Fix deadlock on some platforms with improved handling of Python GIL.
+  * Update Standards-Version.
+  * Add lintian-overrides for jquery and underscore source missing. They are
+    false positives.
+  * Update homepage and git URL to https.
 
- -- Hubert Pham <hubert@mit.edu>  Wed, 11 Jan 2017 23:00:00 -0500
+  [ Felipe Sateler ]
+  * Simplify d/rules by making use of the debhelper pybuild buildsystem
+  * Enable hardening compiler features
+  * Vcs-Git: Make git clones checkout the debian branch
+
+ -- Hubert Pham <hubert@mit.edu>  Wed, 18 Jan 2017 10:38:13 -0300
 
 python-pyaudio (0.2.9-1) unstable; urgency=low
 
