@@ -1,3 +1,12 @@
+python-pyaudio (0.2.11-1) unstable; urgency=low
+
+  * New upstream release
+    - Fix free-after-use memory issue.
+  * Remove lintian-overrides for jquery and underscore source missing,
+    as upstream source no longer contains generated docs.
+
+ -- Hubert Pham <hubert@mit.edu>  Sat, 18 Mar 2017 22:36:00 -0500
+
 python-pyaudio (0.2.10-1) unstable; urgency=medium
 
   [ Hubert Pham ]
