@@ -2,7 +2,7 @@
 
 .PHONY: docs clean build
 
-VERSION := 0.2.10
+VERSION := 0.2.11
 PYTHON ?= python
 BUILD_ARGS ?=
 SPHINX ?= sphinx-build
@@ -44,5 +44,5 @@ docs: build
 ######################################################################
 # Source Tarball
 ######################################################################
-tarball: docs $(SRCFILES) $(EXAMPLES) $(TESTS) MANIFEST.in
+tarball: $(SRCFILES) $(EXAMPLES) $(TESTS) MANIFEST.in
 	@$(PYTHON) setup.py sdist

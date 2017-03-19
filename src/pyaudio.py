@@ -106,7 +106,7 @@ Overview
 """
 
 __author__ = "Hubert Pham"
-__version__ = "0.2.10"
+__version__ = "0.2.11"
 __docformat__ = "restructuredtext en"
 
 import sys
@@ -471,7 +471,7 @@ class Stream:
 
     def get_output_latency(self):
         """
-        Return the input latency.
+        Return the output latency.
 
         :rtype: float
         """
