@@ -103,7 +103,7 @@ else:
         # JACK, since that's common today.
         extra_link_args += ['-lasound', '-ljack']
 
-setup(name='PyAudio',
+setup(name='PyAudioGithub',
       version=__version__,
       author="Hubert Pham",
       url="http://people.csail.mit.edu/hubert/pyaudio/",
