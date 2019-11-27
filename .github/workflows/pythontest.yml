@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   test-deploy:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     strategy:
       max-parallel: 4
       matrix:
@@ -17,7 +17,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        sudo apt-get install portaudio19-dev
+        brew install portaudio
         python -m pip install --upgrade pip
         pip install setuptools wheel twine
     - name: Build and publish
@@ -26,5 +26,4 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
         PORTAUDIO_PATH: /usr/local
       run: |
-        dpkg-query -L portaudio19-dev 
         python setup.py sdist bdist_wheel
