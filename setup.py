@@ -102,6 +102,7 @@ else:
         # sure to specify the desired ones here.  Start with ALSA and
         # JACK, since that's common today.
         extra_link_args += ['-lasound', '-ljack']
+        include_dirs.append("/usr/local/include")
 
 setup(name='PyAudioGithub',
       version=__version__,
