@@ -5,8 +5,8 @@ on:
     types: [created]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  deploy-mac:
+    runs-on: macos-latest
     strategy:
       max-parallel: 4
       matrix:
@@ -19,14 +19,13 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        sudo apt-get install portaudio19-dev
+        brew install portaudio
         python -m pip install --upgrade pip
         pip install setuptools wheel twine
     - name: Build and publish
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-        PORTAUDIO_PATH: /usr/local
       run: |
         python setup.py sdist bdist_wheel
         twine upload dist/*
