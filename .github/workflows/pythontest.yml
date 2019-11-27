@@ -26,5 +26,5 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
         PORTAUDIO_PATH: /usr/local
       run: |
-        ls $PORTAUDIO_PATH/include
+        dpkg-query -L libasound-dev
         python setup.py sdist bdist_wheel
