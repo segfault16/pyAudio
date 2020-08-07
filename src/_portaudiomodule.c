@@ -25,6 +25,7 @@
  */
 
 #include <stdio.h>
+#define PY_SSIZE_T_CLEAN
 #include "Python.h"
 #include "portaudio.h"
 #include "_portaudiomodule.h"
